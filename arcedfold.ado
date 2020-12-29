@@ -2,7 +2,7 @@
 
 program  arcedfold
 	/* This creates folder structure for arced */
-	version 13
+	version 12
 	
 
 *  ----------------------------------------------------------------------------
