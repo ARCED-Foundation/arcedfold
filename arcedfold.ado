@@ -53,47 +53,85 @@ if  scalar(Confirmed) == 0 {
 
 
 *** Layer 1
-mkdir "`path'\\`anything'\Admin"
-mkdir "`path'\\`anything'\Fieldwork"
-mkdir "`path'\\`anything'\Analysis"
-
-
-*** Layer 2
-* Admin folder
-mkdir "`path'\\`anything'\Admin\Proposal"
-mkdir "`path'\\`anything'\Admin\Grant"
-	mkdir "`path'\\`anything'\Admin\Grant\Grant application"
-	mkdir "`path'\\`anything'\Admin\Grant\Grant reports"
-mkdir "`path'\\`anything'\Admin\Logistic"
-mkdir "`path'\\`anything'\Admin\Project Documents"
-mkdir "`path'\\`anything'\Admin\IRB"
-mkdir "`path'\\`anything'\Admin\Contracts"
-mkdir "`path'\\`anything'\Admin\Finance"
-mkdir "`path'\\`anything'\Admin\Pictures"
-mkdir "`path'\\`anything'\Admin\Emails"
-
-* Fieldwork
-mkdir "`path'\\`anything'\Fieldwork\Data"
-	mkdir "`path'\\`anything'\Fieldwork\Data\Data"
-		mkdir "`path'\\`anything'\Fieldwork\Data\Data\clean"
-		mkdir "`path'\\`anything'\Fieldwork\Data\Data\raw"
+	mkdir "`path'\\`anything'\01_Admin"
+	mkdir "`path'\\`anything'\02_Resources"
+	mkdir "`path'\\`anything'\03_Consolidation"
+	mkdir "`path'\\`anything'\04_Execution"
+	mkdir "`path'\\`anything'\05_Documentation"	
+	
 		
-	mkdir "`path'\\`anything'\Fieldwork\Data\BC"
-	mkdir "`path'\\`anything'\Fieldwork\Data\Do files"
-	mkdir "`path'\\`anything'\Fieldwork\Data\HFC"
-	mkdir "`path'\\`anything'\Fieldwork\Data\Logs"
+*** Layer 2
+	mkdir "`path'\\`anything'\01_Admin\01_Agreement"
+		mkdir "`path'\\`anything'\01_Admin\01_Agreement\01_Client"
+	mkdir "`path'\\`anything'\01_Admin\02_Contract"
+	mkdir "`path'\\`anything'\01_Admin\03_Finance"
+		mkdir "`path'\\`anything'\01_Admin\03_Finance\01_Invoice"
+		mkdir "`path'\\`anything'\01_Admin\03_Finance\02_Requisition"
+		mkdir "`path'\\`anything'\01_Admin\03_Finance\03_Bill"
+	mkdir "`path'\\`anything'\01_Admin\04_Budget"	
+		mkdir "`path'\\`anything'\01_Admin\04_Budget\01_Proposed"
+		mkdir "`path'\\`anything'\01_Admin\04_Budget\02_Report"
 
-mkdir "`path'\\`anything'\Fieldwork\Field documents"
-mkdir "`path'\\`anything'\Fieldwork\Tools"
-	mkdir "`path'\\`anything'\Fieldwork\Tools\Questionnaires"
-	mkdir "`path'\\`anything'\Fieldwork\Tools\SurveyCTO files"
+
+	mkdir "`path'\\`anything'\02_Resources\01_Instruments"
+		mkdir "`path'\\`anything'\02_Resources\01_Instruments\01_Paper"
+		mkdir "`path'\\`anything'\02_Resources\01_Instruments\02_XLSForm"
+			mkdir "`path'\\`anything'\02_Resources\01_Instruments\02_XLSForm\01_Attachments"
+		mkdir "`path'\\`anything'\02_Resources\01_Instruments\03_Print"
+	mkdir "`path'\\`anything'\02_Resources\02_Program"
+		mkdir "`path'\\`anything'\02_Resources\02_Program\01_Ado"
+		mkdir "`path'\\`anything'\02_Resources\02_Program\02_Codes"
+	mkdir "`path'\\`anything'\02_Resources\03_Data"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\01_Pilot"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\02_Sample"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\03_Raw"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\04_Checks"	
+			mkdir "`path'\\`anything'\02_Resources\03_Data\04_Checks\01_Inputs"
+			mkdir "`path'\\`anything'\02_Resources\03_Data\04_Checks\02_Outputs"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\05_Corrections"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\06_Clean"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\07_Media"
+		mkdir "`path'\\`anything'\02_Resources\03_Data\08_Log"
 
 
-* Analysis
-mkdir "`path'\\`anything'\Analysis\Report"	
-	mkdir "`path'\\`anything'\Analysis\Report\Feedback"
-mkdir "`path'\\`anything'\Analysis\Presentations"
-mkdir "`path'\\`anything'\Analysis\Tables and figures"	
+	mkdir "`path'\\`anything'\03_Consolidation\01_Working Data"
+		mkdir "`path'\\`anything'\03_Consolidation\01_Working Data\01_Log"
+		mkdir "`path'\\`anything'\03_Consolidation\01_Working Data\02_PI data"
+	mkdir "`path'\\`anything'\03_Consolidation\02_Program"
+		mkdir "`path'\\`anything'\03_Consolidation\02_Program\01_Ado File"
+		mkdir "`path'\\`anything'\03_Consolidation\02_Program\02_Do File"
+	mkdir "`path'\\`anything'\03_Consolidation\03_Analysis"	
+		mkdir "`path'\\`anything'\03_Consolidation\03_Analysis\01_Table"
+		mkdir "`path'\\`anything'\03_Consolidation\03_Analysis\02_Figure"
+		mkdir "`path'\\`anything'\03_Consolidation\03_Analysis\03_Illustration"
+		mkdir "`path'\\`anything'\03_Consolidation\03_Analysis\04_Report"
+		mkdir "`path'\\`anything'\03_Consolidation\03_Analysis\05_Presenatation"
+
+		
+	mkdir "`path'\\`anything'\04_Execution\01_Gantt Chart"
+	mkdir "`path'\\`anything'\04_Execution\02_Meeting Minutes"
+	mkdir "`path'\\`anything'\04_Execution\03_Project Log"
+	mkdir "`path'\\`anything'\04_Execution\04_Hiring and Onboarding"
+	mkdir "`path'\\`anything'\04_Execution\05_Protocol and Manual"
+	mkdir "`path'\\`anything'\04_Execution\06_Field Materials"
+	mkdir "`path'\\`anything'\04_Execution\07_Training Materials"
+
+
+	mkdir "`path'\\`anything'\05_Documentation\01_Proposal"
+	mkdir "`path'\\`anything'\05_Documentation\02_Onboarding documents"
+	mkdir "`path'\\`anything'\05_Documentation\03_Inception"
+	mkdir "`path'\\`anything'\05_Documentation\04_Design"
+	mkdir "`path'\\`anything'\05_Documentation\05_IRB"
+		mkdir "`path'\\`anything'\05_Documentation\05_IRB\01_Applications"
+		mkdir "`path'\\`anything'\05_Documentation\05_IRB\02_Amendments"
+		mkdir "`path'\\`anything'\05_Documentation\05_IRB\03_Approvals"
+		mkdir "`path'\\`anything'\05_Documentation\05_IRB\04_Certificates"
+	mkdir "`path'\\`anything'\05_Documentation\06_Letters and Permissions"
+	mkdir "`path'\\`anything'\05_Documentation\07_Reports"
+	mkdir "`path'\\`anything'\05_Documentation\08_Email"
+	mkdir "`path'\\`anything'\05_Documentation\09_Outreach"
+	mkdir "`path'\\`anything'\05_Documentation\10_Deliverables"
+		
 
 noi di `"All the folders are created. To browse click here: {browse "`path'\\`anything'": `anything'}"'
 
