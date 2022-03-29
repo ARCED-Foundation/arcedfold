@@ -8,7 +8,7 @@ arcedfold is a Stata command that creates specific folder structures for ARCED's
 * arcedfold can be installed from github
 
 net install arcedfold, all replace ///
-	from("https://raw.githubusercontent.com/ARCED-Foundation/arcedfold/main")
+	from("https://raw.githubusercontent.com/ARCED-Foundation/arcedfold/path")
 ```
 
 
