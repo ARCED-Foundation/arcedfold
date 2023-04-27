@@ -27,6 +27,7 @@ help arcedfold
 
 ## Syntax
 ``arcedfold foldername, path() [options]``
+
 ``arcedsubfold foldername, path() [options]``
 
 Write desired folder name in place of **_foldername_**. Write the full path of the directory in ``path()`` where you want the folder structure to be created.
