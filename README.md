@@ -15,7 +15,7 @@
 :memo: V1: April 2018
 
 
-## :wrench: Installation
+## :gear: Installation
 ```stata
 * arcedfold can be installed from github
 
@@ -25,7 +25,7 @@ net install arcedfold, all replace ///
 help arcedfold
 ```
 
-## :toolbox: Syntax
+## :wrench: Syntax
 ``arcedfold foldername, path() [options]``
 
 ``arcedsubfold foldername, path() [options]``
@@ -34,7 +34,7 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 
 
 
-## :paperclip: Options
+## :screwdriver: Options
 
 <b>path</b> specifies the path where the folders should be created
 
@@ -106,7 +106,7 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 		|-- 04_Field_Team_Hiring
 ```
 
-## Example Syntax
+## :paperclip: Example Syntax
 ```stata
 arcedfold project ABC, path(X:\Projects 2023)
 arcedfold project ABC, path(X:\Projects 2023) rounds(01_Pilot 02_Baseline) surveys(Camp Host)
@@ -117,7 +117,7 @@ arcedsubfold project ABC, path(X:\Projects 2023) rounds(03_Endline) surveys(Camp
 arcedfold project ABC, path(X:\Projects 2017) final
 ```
 
-## Author
+## :technologist: Author
 <a href="https://arced.foundation/mehrab-ali" target="_blank">Mehrab Ali</a>
 
 <a href="https://arced.foundation" target="_blank">ARCED Foundation</a>
