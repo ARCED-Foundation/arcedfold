@@ -117,7 +117,7 @@ arcedsubfold project ABC, path(X:\Projects 2023) rounds(03_Endline) surveys(Camp
 arcedfold project ABC, path(X:\Projects 2017) final
 ```
 
-## :technologist: Author
+## :mage: Author
 <a href="https://arced.foundation/mehrab-ali" target="_blank">Mehrab Ali</a>
 
 <a href="https://arced.foundation" target="_blank">ARCED Foundation</a>
