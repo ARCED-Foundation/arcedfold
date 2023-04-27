@@ -112,8 +112,9 @@ arcedfold project ABC, path(X:\Projects 2017) final
 
 ## Author
 <a href="https://arced.foundation/mehrab-ali" target="_blank">Mehrab Ali</a>
+:email: mehrab.ali@arced.foundation
 
-<a href="https://arced.foundation" target="_blank">ARCED Foundation</a>
+:globe_with_meridians:<a href="https://arced.foundation" target="_blank">ARCED Foundation</a>
 
-Please report all bugs/feature request to the <a href="https://github.com/ARCED-Foundation/arcedfold/issues" target="_blank"> github issues page</a>
+Please report all :beetle:/feature request to the <a href="https://github.com/ARCED-Foundation/arcedfold/issues" target="_blank"> github issues page</a>
 
