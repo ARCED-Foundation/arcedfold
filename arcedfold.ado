@@ -36,10 +36,7 @@ program  arcedfold
 			exit 693
 		}
 	
-	if mi("`rounds'") & mi("`surveys'") {
-		di as err "Specify at least one round or survey."
-		exit 198
-	}
+	
 	
 
 		**# Layer 1
@@ -89,6 +86,10 @@ program  arcedfold
 						
 			
 			* 02_Dataflow
+			
+				if mi("`rounds'") & mi("`surveys'") {
+					create_dataflow, datapath("`path'/`anything'/02_DataFlow/"
+				}
 				
 				if !mi("`rounds'") & !mi("`surveys'") {
 					foreach round of loc rounds {
@@ -231,135 +232,139 @@ program  arcedsubfold
 	}
 	
 	* 02_Dataflow
+		
+		if mi("`rounds'") & mi("`surveys'") {
+			create_dataflow, datapath("`path'/`anything'/02_DataFlow/"
+		}
 				
-				if !mi("`rounds'") & !mi("`surveys'") {
-					foreach round of loc rounds {
-						
-						* For all rounds
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`round'"))
+		if !mi("`rounds'") & !mi("`surveys'") {
+			foreach round of loc rounds {
+				
+				* For all rounds
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`round'"))
 
-						if scalar(Confirmed) == 0 {
-							di as input "The `round' folder does not exist. Creating `round' folder."
-							mkdir "`path'/`anything'/02_Dataflow/`round'"
-						}	
-						
-						else {
-							di as input "The `round' folder already exists. Not creating `round' folder."
-						}
-						
-						* For each surveys 
-						foreach survey of loc surveys {
-							cap mkdir "`path'/`anything'/02_DataFlow/`round'/`survey'"
-							if _rc {
-								di as err "Could not create `survey' folder in 02_DataFlow/`round'. Check if the `survey' folder already exists."
-								exit 693
-							}
-							create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")
-						}
+				if scalar(Confirmed) == 0 {
+					di as input "The `round' folder does not exist. Creating `round' folder."
+					mkdir "`path'/`anything'/02_Dataflow/`round'"
+				}	
+				
+				else {
+					di as input "The `round' folder already exists. Not creating `round' folder."
+				}
+				
+				* For each surveys 
+				foreach survey of loc surveys {
+					cap mkdir "`path'/`anything'/02_DataFlow/`round'/`survey'"
+					if _rc {
+						di as err "Could not create `survey' folder in 02_DataFlow/`round'. Check if the `survey' folder already exists."
+						exit 693
 					}
+					create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")
+				}
+			}
+		}
+		
+		
+		if !mi("`rounds'") & mi("`surveys'") {
+			foreach round of loc rounds {
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`round'"))
+
+				if scalar(Confirmed) == 0 {
+					di as input "The `round' folder does not exist in 02_DataFlow. Creating `round' folder."
+					mkdir "`path'/`anything'/02_Dataflow/`round'"
+				}	
+				
+				else {
+					di as input "The `round' folder already exists in 02_DataFlow. Not creating `round' folder."
+				}
+				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'")
+			}					
+		}
+		
+		
+		if mi("`rounds'") & !mi("`surveys'") {
+			foreach survey of loc surveys {
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`survey'"))
+
+				if scalar(Confirmed) == 0 {
+					di as input "The `survey' folder does not exist in 02_DataFlow. Creating `survey' folder."
+					mkdir "`path'/`anything'/02_Dataflow/`survey'"
+				}	
+				
+				else {
+					di as input "The `survey' folder already exists in 02_DataFlow. Not creating `survey' folder."
+				}
+				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'")
+			}					
+		}
+		
+		
+	
+	* 03_FieldWork
+
+		if !mi("`rounds'") & !mi("`surveys'") {
+			foreach round of loc rounds {
+				
+				* For all rounds
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`round'"))
+
+				if scalar(Confirmed) == 0 {
+					di as input "The `round' folder does not exist in 03_FieldWork. Creating `round' folder."
+					mkdir "`path'/`anything'/03_FieldWork/`round'"
+				}	
+				
+				else {
+					di as input "The `round' folder already exists in 03_FieldWork. Not creating `round' folder."
 				}
 				
-				
-				if !mi("`rounds'") & mi("`surveys'") {
-					foreach round of loc rounds {
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`round'"))
-
-						if scalar(Confirmed) == 0 {
-							di as input "The `round' folder does not exist in 02_DataFlow. Creating `round' folder."
-							mkdir "`path'/`anything'/02_Dataflow/`round'"
-						}	
-						
-						else {
-							di as input "The `round' folder already exists in 02_DataFlow. Not creating `round' folder."
-						}
-						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'")
-					}					
-				}
-				
-				
-				if mi("`rounds'") & !mi("`surveys'") {
-					foreach survey of loc surveys {
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/02_Dataflow/`survey'"))
-
-						if scalar(Confirmed) == 0 {
-							di as input "The `survey' folder does not exist in 02_DataFlow. Creating `survey' folder."
-							mkdir "`path'/`anything'/02_Dataflow/`survey'"
-						}	
-						
-						else {
-							di as input "The `survey' folder already exists in 02_DataFlow. Not creating `survey' folder."
-						}
-						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'")
-					}					
-				}
-				
-				
-			
-			* 03_FieldWork
-
-				if !mi("`rounds'") & !mi("`surveys'") {
-					foreach round of loc rounds {
-						
-						* For all rounds
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`round'"))
-
-						if scalar(Confirmed) == 0 {
-							di as input "The `round' folder does not exist in 03_FieldWork. Creating `round' folder."
-							mkdir "`path'/`anything'/03_FieldWork/`round'"
-						}	
-						
-						else {
-							di as input "The `round' folder already exists in 03_FieldWork. Not creating `round' folder."
-						}
-						
-						* For each surveys 
-						foreach survey of loc surveys {
-							cap mkdir "`path'/`anything'/03_FieldWork/`round'/`survey'"
-							if _rc {
-								di as err "Could not create `survey' folder in 03_FieldWork/`round'. Check if the `survey' folder already exists."
-								exit 693
-							}
-							create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`round'/`survey'")
-						}
+				* For each surveys 
+				foreach survey of loc surveys {
+					cap mkdir "`path'/`anything'/03_FieldWork/`round'/`survey'"
+					if _rc {
+						di as err "Could not create `survey' folder in 03_FieldWork/`round'. Check if the `survey' folder already exists."
+						exit 693
 					}
+					create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`round'/`survey'")
 				}
-				
-				
-				if !mi("`rounds'") & mi("`surveys'") {
-					foreach round of loc rounds {
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`round'"))
+			}
+		}
+		
+		
+		if !mi("`rounds'") & mi("`surveys'") {
+			foreach round of loc rounds {
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`round'"))
 
-						if scalar(Confirmed) == 0 {
-							di as input "The `round' folder does not exist in 03_FieldWork. Creating `round' folder."
-							mkdir "`path'/`anything'/03_FieldWork/`round'"
-						}	
-						
-						else {
-							di as input "The `round' folder already exists in 03_FieldWork. Not creating `round' folder."
-						}
-						create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`round'")
-					}					
+				if scalar(Confirmed) == 0 {
+					di as input "The `round' folder does not exist in 03_FieldWork. Creating `round' folder."
+					mkdir "`path'/`anything'/03_FieldWork/`round'"
+				}	
+				
+				else {
+					di as input "The `round' folder already exists in 03_FieldWork. Not creating `round' folder."
 				}
-				
-				
-				if mi("`rounds'") & !mi("`surveys'") {
-					foreach survey of loc surveys {
-						mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`survey'"))
+				create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`round'")
+			}					
+		}
+		
+		
+		if mi("`rounds'") & !mi("`surveys'") {
+			foreach survey of loc surveys {
+				mata : st_numscalar("Confirmed", direxists("`path'/`anything'/03_FieldWork/`survey'"))
 
-						if scalar(Confirmed) == 0 {
-							di as input "The `survey' folder does not exist in 03_FieldWork. Creating `survey' folder."
-							mkdir "`path'/`anything'/03_FieldWork/`survey'"
-						}	
-						
-						else {
-							di as input "The `survey' folder already exists in 03_FieldWork. Not creating `survey' folder."
-						}
-						create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`survey'")
-					}					
+				if scalar(Confirmed) == 0 {
+					di as input "The `survey' folder does not exist in 03_FieldWork. Creating `survey' folder."
+					mkdir "`path'/`anything'/03_FieldWork/`survey'"
+				}	
+				
+				else {
+					di as input "The `survey' folder already exists in 03_FieldWork. Not creating `survey' folder."
 				}
-				
+				create_fieldwork, fieldpath("`path'/`anything'/03_FieldWork/`survey'")
+			}					
+		}
+		
 
-		noi di `"All the folders are created. To browse click here: {browse "`path'/`anything'": `anything'}"'
+	noi di `"All the folders are created. To browse click here: {browse "`path'/`anything'": `anything'}"'
 
 	
 	

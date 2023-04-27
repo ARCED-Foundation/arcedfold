@@ -91,13 +91,14 @@ Write desired folder name in place of **_string_**.
     <b>rounds</b> sepcifies the list of folders to be created inside the 02_DataWork
         folder. If <b>surveys</b> not specified, the dataflow will be created inside each rounds.
 <p>
-    <b>surveys</b> sepcifies the list of folders to be created inside each of the
-        rounds folder. If <b>rounds</b> not specified, the list of folders will be
-        created inside 02_DataFlow folder and dataflow will be created inside
-        each surveys.
+    <b>surveys</b> sepcifies the list of folders to be created inside each of the rounds folder. If <b>rounds</b> not specified, the list of folders will be created inside 02_DataFlow folder and dataflow will be created inside each surveys.
 <p>
-    <b>final</b> sepcifies that the folders already exist and to create the file
-        list.
+
+<b>final</b> sepcifies that the folders already exist and to create the file list.
+
+<br>
+
+_**If no round as well as no survey is specified, dataflow will be created inside 02_DataWork folder.**_
 
 ## Example Syntax
 ```stata

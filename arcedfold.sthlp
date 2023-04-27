@@ -66,6 +66,10 @@
 {opt final} sepcifies that the folders already exist and to create the file list.
 
 
+
+{phang}
+If no round as well as no surveys specified, dataflow will be created inside 02_DataWork folder.
+
 {marker description}{...}
 {title:Folder tree}
 
