@@ -8,6 +8,7 @@
 
 #### Previous versions
 :memo: V2: November 2022 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
+
 :memo: V1: April 2018
 
 
@@ -100,6 +101,7 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 
 ## Example Syntax
 ```stata
+arcedfold project ABC, path(X:\Projects 2023)
 arcedfold project ABC, path(X:\Projects 2023) rounds(01_Pilot 02_Baseline) surveys(Camp Host)
 arcedsubfold project ABC, path(X:\Projects 2023) rounds(02_Baseline) surveys(Schools)
 arcedsubfold project ABC, path(X:\Projects 2023) rounds(03_Endline) surveys(Camp Host Schools)
