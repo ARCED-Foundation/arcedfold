@@ -63,7 +63,7 @@
 {opt surveys} sepcifies the list of folders to be created inside each of the rounds folder. If {opt rounds} not specified, the list of folders will be created inside 02_DataWork folder and dataflow will be created inside each surveys.
 
 {phang}
-{opt final} sepcifies that the folders already exist and to create the file list.
+{opt final} sepcifies that the folders already exist and to create the file list. Not valid for {cmd:arcedsubfold}{p_end}
 
 
 

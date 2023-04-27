@@ -1,17 +1,14 @@
 ## Overview
 
-<b>arcedfold</b> is a Stata command that creates specific folder structures for ARCED's projects.
+``arcedfold`` is a Stata command that creates specific folder structures for ARCED's projects.
 
 ## Versions
 #### Current version
----
-V3: April 2023 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V3)
+:memo: V3: April 2023 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V3)
 
 #### Previous versions
----
-V2: November 2022 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
-
-V1: April 2018
+:memo: V2: November 2022 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
+:memo: V1: April 2018
 
 
 ## Installation
@@ -25,9 +22,9 @@ help arcedfold
 ```
 
 ## Syntax
-arcedfold <b><i>string</i></b>, [options]
+``arcedfold foldername, path() [options]``
 
-Write desired folder name in place of **_string_**.
+Write desired folder name in place of **_foldername_**. Write the full path of the directory in ``path()`` where you want the folder structure to be created.
 
 ### Folder tree
 ```
@@ -90,18 +87,16 @@ Write desired folder name in place of **_string_**.
 ## Options
 
 <b>path</b> specifies the path where the folders should be created
-<p>
-    <b>rounds</b> sepcifies the list of folders to be created inside the 02_DataWork
-        folder. If <b>surveys</b> not specified, the dataflow will be created inside each rounds.
-<p>
-    <b>surveys</b> sepcifies the list of folders to be created inside each of the rounds folder. If <b>rounds</b> not specified, the list of folders will be created inside 02_DataFlow folder and dataflow will be created inside each surveys.
-<p>
 
-<b>final</b> sepcifies that the folders already exist and to create the file list.
+<b>rounds</b> sepcifies the list of folders to be created inside the 02_DataWork folder. If <b>surveys</b> not specified, the dataflow will be created inside each rounds.
+
+<b>surveys</b> sepcifies the list of folders to be created inside each of the rounds folder. If <b>rounds</b> not specified, the list of folders will be created inside 02_DataFlow folder and dataflow will be created inside each surveys.
+
+<b>final</b> sepcifies that the folders already exist and to create the file list. Not valid for Not valid for ``arcedsubfold`` subcommand.
 
 <br>
 
-_**If no round as well as no survey is specified, dataflow will be created inside 02_DataWork folder.**_
+:bulb: _**If no round as well as no survey is specified, dataflow will be created inside 02_DataWork folder.**_
 
 ## Example Syntax
 ```stata
