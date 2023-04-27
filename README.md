@@ -3,11 +3,11 @@
 <b>arcedfold</b> is a Stata command that creates specific folder structures for ARCED's projects.
 
 ## Versions
-#### Current version
-V3: April 2023 [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V3)
+#### <u>Current version</u>
+V3: April 2023 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V3)
 
-#### Previous versions
-V2: November 2022 [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
+#### <u>Previous versions</u>
+V2: November 2022 - [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
 
 V1: April 2018
 
