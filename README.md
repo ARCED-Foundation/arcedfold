@@ -8,6 +8,7 @@ V3: April 2023 [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/
 
 ##### Previous versions
 V2: November 2022 [GitHub repo](https://github.com/ARCED-Foundation/arcedfold/tree/V2)
+
 V1: April 2018
 
 
