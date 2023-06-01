@@ -73,6 +73,7 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 	|-- 02_Email
 	|-- 03_Reports_and_Presentations
 	|-- 04_Outreach 
+	|-- 05_Meeting_Minutes 
 02_DataFlow
   |-- Round
 	|-- Survey

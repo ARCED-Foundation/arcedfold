@@ -82,6 +82,7 @@ program  arcedfold
 				mkdir "`path'/`anything'/01_Admin/05_Communications/02_Email"
 				mkdir "`path'/`anything'/01_Admin/05_Communications/03_Reports_and_Presentations"
 				mkdir "`path'/`anything'/01_Admin/05_Communications/04_Outreach"
+				mkdir "`path'/`anything'/01_Admin/05_Communications/05_Meeting_Minutes"
 				
 						
 			
