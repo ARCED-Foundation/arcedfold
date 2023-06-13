@@ -7,8 +7,7 @@
 <pre>
 <b><u>Title</u></b>
 <p>
-    <b>arcedfold</b> -- Create all folders according to the folder structure for
-        ARCED projects.
+    <b>arcedfold</b> -- Create all folders according to the folder structure for ARCED projects. <b>arcedfold</b> uses <a href="https://www.veracrypt.fr/en/Home.html"> veracrypt </a> for folder encryption. Download <a href="https://www.veracrypt.fr/en/Downloads.html"> veracrypt </a> and install in your computer if you want to use encryption as part of your dataflow. You also need to download and install <a href="https://docs.surveycto.com/05-exporting-and-publishing-data/02-exporting-data-with-surveycto-desktop/01.using-desktop.html"> SurveyCTO Desktop </a> for manual data download, if you opt for it.
 <p>
 <p>
 <a name="syntax"></a><b><u>Syntax</u></b>
