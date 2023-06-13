@@ -15,7 +15,17 @@ program  arcedsubfold
 		Path(string)
 		;
 		#d cr
-	
+
+**# Check if arceddataflow installed
+*-------------------------------------------------------------------------------
+
+	cap which arceddataflow
+	if _rc net install arceddataflow, all replace ///
+			from("https://raw.githubusercontent.com/ARCED-Foundation/arceddataflow/master")
+			
+**# Check options                                                            
+*-------------------------------------------------------------------------------
+		
 	if mi("`rounds'") & mi("`surveys'") {
 		di as err "Specify at least one round or survey."
 		exit 198
