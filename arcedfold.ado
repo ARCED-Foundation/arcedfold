@@ -258,6 +258,9 @@ prog create_dataflow
 			mkdir "`datapath'/04_Output/03_Analysis/03_Illustration"
 			mkdir "`datapath'/04_Output/03_Analysis/04_Report"
 			mkdir "`datapath'/04_Output/03_Analysis/05_Presenatation"
+			
+** Do files 
+	n arceddataflow, do("`datapath'/02_Codes") correction("`datapath'/03_Data/03_Corrections")
 end 
 
 
