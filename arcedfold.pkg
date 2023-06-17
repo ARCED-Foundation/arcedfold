@@ -1,3 +1,19 @@
+v 3.0.1
+d 'arcedfold': is a Stata command that creates the do files for the data flow for a project.
+d
+d
+d KW: data management
+d KW: data collection
+d KW: data quality
+d KW: project managment
+d
+d Requires: Stata version 9
+d
+d Distribution-Date: 17jun2023
+d
+d Author: Mehrab Ali, ARCED Foundation
+d Support: mehrabbabu@gmail.com
+d
 f arcedfold.ado
 f arcedsubfold.ado
 f arcedfold.sthlp
