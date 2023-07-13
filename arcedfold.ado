@@ -15,7 +15,7 @@ program  arcedfold
 	[SURVEYs(string)]
 	[Final]
 	Path(string)
-	[AUTHor(string)]
+	[author(string)]
 	[email(string)]
 	;
 	#d cr
@@ -270,7 +270,7 @@ prog create_dataflow
 			
 ** Do files 
 	n arceddataflow, do("`datapath'/02_Codes") correction("`datapath'/03_Data/03_Corrections") ///
-					proj("`anything'") author("`author'") email("email")
+					project("`anything'") author("`author'") email("`email'")
 end 
 
 
