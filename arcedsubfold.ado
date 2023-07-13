@@ -1,4 +1,4 @@
-*! version 3.0.4 Mehrab Ali 20april2023
+*! version 3.0.5 Mehrab Ali 20april2023
 
 cap prog drop arcedsubfold
 program  arcedsubfold
@@ -31,10 +31,14 @@ program  arcedsubfold
 		exit 198
 	}
 	
+	if mi("`author'") loc author = "`=c(username)'"
+	if mi("`email'")  loc email  = "info@arced.foundation"
+	loc projectname = "`anything'"
+	
 	* 02_Dataflow
 		
 		if mi("`rounds'") & mi("`surveys'") {
-			create_dataflow, datapath("`path'/`anything'/02_DataFlow/")  project("`anything'") author("`author'") email("`email'")
+			create_dataflow, datapath("`path'/`anything'/02_DataFlow/")  project("`projectname'") author("`author'") email("`email'")
 		}
 				
 		if !mi("`rounds'") & !mi("`surveys'") {
@@ -59,7 +63,7 @@ program  arcedsubfold
 						di as err "Could not create `survey' folder in 02_DataFlow/`round'. Check if the `survey' folder already exists."
 						exit 693
 					}
-					create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")  project("`anything'") author("`author'") email("`email'")
+					create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")  project("`projectname'") author("`author'") email("`email'")
 				}
 			}
 		}
@@ -77,7 +81,7 @@ program  arcedsubfold
 				else {
 					di as input "The `round' folder already exists in 02_DataFlow. Not creating `round' folder."
 				}
-				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'") project("`anything'") author("`author'") email("`email'")
+				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'") project("`projectname'") author("`author'") email("`email'")
 			}					
 		}
 		
@@ -94,7 +98,7 @@ program  arcedsubfold
 				else {
 					di as input "The `survey' folder already exists in 02_DataFlow. Not creating `survey' folder."
 				}
-				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'")  project("`anything'") author("`author'") email("`email'")
+				create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'")  project("`projectname'") author("`author'") email("`email'")
 			}					
 		}
 		
