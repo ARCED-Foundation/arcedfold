@@ -1,4 +1,4 @@
-*! version 3.0.2 Mehrab Ali 20april2023
+*! version 3.0.3 Mehrab Ali 20april2023
 
 cap prog drop arcedfold
 program  arcedfold
@@ -98,7 +98,7 @@ program  arcedfold
 			* 02_Dataflow
 			
 				if mi("`rounds'") & mi("`surveys'") {
-					create_dataflow, datapath("`path'/`anything'/02_DataFlow/")
+					create_dataflow, datapath("`path'/`anything'/02_DataFlow/")  project(`anything') author(`author') email(`email')
 				}
 				
 				if !mi("`rounds'") & !mi("`surveys'") {
@@ -117,7 +117,7 @@ program  arcedfold
 								di as err "Could not create `survey' folder in 02_DataFlow. Check if the `survey' folder already exists."
 								exit 693
 							}
-							create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")
+							create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'/`survey'")  project(`anything') author(`author') email(`email')
 						}
 					}
 				}
@@ -130,7 +130,7 @@ program  arcedfold
 							di as err "Could not create `round' folder in 02_DataFlow. Check if the `round' folder already exists."
 							exit 693
 						}
-						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'")
+						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`round'")  project(`anything') author(`author') email(`email')
 					}					
 				}
 				
@@ -141,7 +141,7 @@ program  arcedfold
 							di as err "Could not create `survey' folder in 02_DataFlow. Check if the `survey' folder already exists."
 							exit 693
 						}
-						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'")
+						create_dataflow, datapath("`path'/`anything'/02_DataFlow/`survey'") project(`anything') author(`author') email(`email')
 					}					
 				}
 				
@@ -228,7 +228,7 @@ end
 
 cap program drop create_dataflow			
 prog create_dataflow
-	syntax, datapath(string)
+	syntax, datapath(string) project(string) author(string) email(email)
 
 
 ** Instrument
