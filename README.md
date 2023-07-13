@@ -46,6 +46,10 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 
 <b>final</b> sepcifies that the folders already exist and to create the file list. Not valid for Not valid for ``arcedsubfold`` subcommand.
 
+<b>author</b> Your name and affiliation
+
+<b>email</b> Your email address
+
 <br>
 
 :bulb: _**If no round as well as no survey is specified, dataflow will be created inside 02_DataWork folder.**_
@@ -111,10 +115,13 @@ Write desired folder name in place of **_foldername_**. Write the full path of t
 
 ## :paperclip: Example Syntax
 ```stata
-arcedfold project ABC, path(X:\Projects 2023)
-arcedfold project ABC, path(X:\Projects 2023) rounds(01_Pilot 02_Baseline) surveys(Camp Host)
-arcedsubfold project ABC, path(X:\Projects 2023) rounds(02_Baseline) surveys(Schools)
-arcedsubfold project ABC, path(X:\Projects 2023) rounds(03_Endline) surveys(Camp Host Schools)
+arcedfold project ABC, path(X:\Projects 2023) author(Mehrab Ali, ARCED Foundation) email(mehrab.ali@arced.foundation)
+
+arcedfold project ABC, path(X:\Projects 2023) rounds(01_Pilot 02_Baseline) surveys(Camp Host) author(Mehrab Ali, ARCED Foundation) email(mehrab.ali@arced.foundation)
+
+arcedsubfold project ABC, path(X:\Projects 2023) rounds(02_Baseline) surveys(Schools) author(Mehrab Ali, ARCED Foundation) email(mehrab.ali@arced.foundation)
+
+arcedsubfold project ABC, path(X:\Projects 2023) rounds(03_Endline) surveys(Camp Host Schools) author(Mehrab Ali, ARCED Foundation) email(mehrab.ali@arced.foundation)
 
 **# Generate a list of all files and export in an excel file
 arcedfold project ABC, path(X:\Projects 2017) final
