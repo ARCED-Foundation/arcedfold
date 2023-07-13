@@ -15,6 +15,8 @@ program  arcedfold
 	[SURVEYs(string)]
 	[Final]
 	Path(string)
+	[AUTHor(string)]
+	[email(string)]
 	;
 	#d cr
 
@@ -42,7 +44,8 @@ program  arcedfold
 		}
 	
 	
-	
+	if mi("`author'") loc author = "`=c(username)'"
+	if mi("`email'")  loc email  = "info@arced.foundation"
 
 		**# Layer 1
 		*-----------------------------------------------------------------------
@@ -265,7 +268,8 @@ prog create_dataflow
 			mkdir "`datapath'/04_Output/03_Analysis/05_Presenatation"
 			
 ** Do files 
-	n arceddataflow, do("`datapath'/02_Codes") correction("`datapath'/03_Data/03_Corrections")
+	n arceddataflow, do("`datapath'/02_Codes") correction("`datapath'/03_Data/03_Corrections") ///
+					proj("`anything'") author("`author'") email("email")
 end 
 
 
