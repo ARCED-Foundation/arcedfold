@@ -26,6 +26,7 @@ program  arcedfold
 	cap which arceddataflow
 	if _rc net install arceddataflow, all replace ///
 			from("https://raw.githubusercontent.com/ARCED-Foundation/arceddataflow/master")
+	adoupdate arceddataflow
 
 **# Check options                                                            
 *-------------------------------------------------------------------------------
