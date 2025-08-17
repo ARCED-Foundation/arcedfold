@@ -7,7 +7,7 @@ d KW: data collection
 d
 d Requires: Stata version 9
 d
-d Distribution-Date: 13jul2023
+d Distribution-Date: 17aug2025
 d
 d Author: Mehrab Ali, ARCED Foundation
 d Support: mehrabbabu@gmail.com
@@ -15,3 +15,4 @@ d
 f arcedfold.ado
 f arcedsubfold.ado
 f arcedfold.sthlp
+f arcedfold.dlg
