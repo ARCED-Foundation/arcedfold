@@ -1,4 +1,4 @@
-*! version 3.0.5 Mehrab Ali 20april2023
+*! version 3.0.6 Mehrab Ali 17aug2025
 
 cap prog drop arcedsubfold
 program  arcedsubfold
@@ -13,6 +13,8 @@ program  arcedsubfold
 		[ROUNDs(string)]
 		[SURVEYs(string)]
 		Path(string)
+		[author(string)]
+		[email(string)]
 		;
 		#d cr
 
