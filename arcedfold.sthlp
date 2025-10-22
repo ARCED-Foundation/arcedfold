@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0.1  25feb2018}{...}
+{* *! version 1.0.2  14Aug2025}{...}
 {findalias asfradohelp}{...}
 {vieweralsosee "" "--"}{...}
 {vieweralsosee "[R] help" "help help"}{...}
@@ -16,6 +16,10 @@
 
 {marker syntax}{...}
 {title:Syntax}
+
+
+{p 8 2 1}
+{cmdab: db arcedfold}
 
 {p 8 17 2}
 {cmdab:arcedfold}
@@ -41,6 +45,9 @@
 
 {marker description}{...}
 {title:Description}
+
+{pstd}
+{cmd:db arcedfold} opens a dialog box that allows users to run arcedfold, arcedsubfold, and arceddataflow without writing any additional code.
 
 {pstd}
 {cmd:arcedfold} creates all the folders for a project. This can be used at the very begining of a project, or to archieve files after completing a project.
@@ -131,6 +138,8 @@ If no round as well as no surveys specified, dataflow will be created inside 02_
 
 {marker examples}{...}
 {title:Examples}
+
+{phang}{cmd:. db arcedfold} {p_end}
 
 {phang}{cmd:. arcedfold project ABC, path(X:\Projects 2023) rounds(01_Pilot 02_Baseline) surveys(Camp Host)}{p_end}
 
